@@ -1,6 +1,13 @@
 import fs from 'node:fs';
 import { test, expect, type Page } from '@playwright/test';
 
+test.beforeEach(async ({ page }, testInfo) => {
+  if (testInfo.title.startsWith('each desktop sidebar')) return;
+  await page.addInitScript(() => {
+    localStorage.setItem('office-sidebar-sessions', 'open');
+    localStorage.setItem('office-sidebar-activity', 'open');
+  });
+});
 // Collects uncaught errors and console errors while the page runs.
 function watchErrors(page: Page) {
   const errors: string[] = [];
@@ -59,6 +66,11 @@ test('each desktop sidebar gives its width to the office and remembers its state
   const activity = page.locator('[data-sidebar="activity"]');
   const canvas = stage.locator('canvas').first();
   await expect(canvas).toBeVisible();
+  await expect(sessions).toHaveAttribute('aria-expanded', 'false');
+  await expect(activity).toHaveAttribute('aria-expanded', 'false');
+  await expect(stage).toHaveCSS('width', '1200px');
+  await sessions.press('Enter');
+  await activity.press('Enter');
   await expect(sessions).toHaveAttribute('aria-expanded', 'true');
   const initialWidth = (await stage.boundingBox())!.width;
 

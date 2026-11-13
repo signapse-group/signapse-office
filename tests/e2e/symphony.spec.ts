@@ -59,10 +59,12 @@ test('Assignments and blocker resolution follow worker movement in Signapse Offi
   for (const name of ['Runtime', 'Hàng đợi issue']) {
     const sidebar = page.getByRole('complementary', { name, exact: true });
     const toggle = page.getByRole('button', { name, exact: true }).and(page.locator('[data-sidebar]'));
-    await toggle.press('Enter');
     await expect(sidebar).toBeHidden();
     await toggle.press('Enter');
     await expect(sidebar).toBeVisible();
+    await toggle.press('Enter');
+    await expect(sidebar).toBeHidden();
+    await toggle.press('Enter');
   }
   await page.evaluate(() => {
     const { renderer, speed, workers } = (window as unknown as OfficeWindow).__office;
@@ -119,6 +121,8 @@ test('Symphony starts with twelve members and shows planning and bug workflows',
   await page.clock.fastForward(1500);
   const left = page.getByRole('complementary', { name: 'Runtime', exact: true });
   const right = page.locator('#feed');
+  await page.locator('[data-sidebar="sessions"]').press('Enter');
+  await page.locator('[data-sidebar="activity"]').press('Enter');
   const count = (kind: string) => right.locator(`[data-queue="${kind}"] .symphony-count`);
   const task = (id: string) => right.locator(`.symphony-queues [data-issue="${id}"]`);
   const detail = page.getByRole('dialog');

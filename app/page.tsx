@@ -13,7 +13,7 @@ import OfficeBoot from '@/components/OfficeBoot';
 // Local rendering reads the requested language. Static export renders each language once.
 export default function OfficePage() {
   return (
-    <div id="app">
+    <div id="app" data-sessions="closed" data-activity="closed">
       <TopBar />
       <SessionRail />
       <Stage />

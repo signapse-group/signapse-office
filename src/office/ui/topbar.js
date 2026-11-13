@@ -21,17 +21,16 @@ export function notifyWait(s, e) {
 }
 
 export function setup() {
-  const app = $('app'), compact = matchMedia('(max-width: 1100px)');
+  const app = $('app');
   for (const button of document.querySelectorAll('[data-sidebar]')) {
     const side = button.dataset.sidebar, key = `office-sidebar-${side}`;
     let saved;
     try { saved = localStorage.getItem(key); } catch { /* storage blocked */ }
     const sync = () => {
-      const open = saved ? saved === 'open' : side === 'activity' || !compact.matches;
+      const open = saved === 'open';
       app.dataset[side] = open ? 'open' : 'closed';
       button.setAttribute('aria-expanded', String(open));
     };
-    compact.addEventListener('change', sync);
     button.addEventListener('click', () => {
       saved = app.dataset[side] === 'open' ? 'closed' : 'open';
       try { localStorage.setItem(key, saved); } catch { /* storage blocked */ }

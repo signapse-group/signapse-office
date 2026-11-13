@@ -10,8 +10,8 @@ export default async function TopBar() {
     <header className="topbar">
       <div className="tb-brand"><span className="logo" aria-hidden="true" style={{ backgroundImage: `url(${LOGO_URL})` }}></span><span>{OFFICE_NAME}</span><span className="tb-clock" id="clock">--:--</span><span className="demo-chip" id="demo-chip" hidden>DEMO<span className="demo-more"> · {t('ui.topBar.sampleData')}</span></span><span className="demo-chip replay-chip" id="replay-chip" hidden></span></div>
       <div className="tb-layout">
-        <button type="button" className="tb-btn tb-icon tb-sidebar tb-sidebar-left" data-sidebar="sessions" aria-controls="sessions-sidebar" aria-expanded="true" aria-label={t('ui.sessionRail.title')} title={t('ui.sessionRail.title')}><span data-icon="panel"></span></button>
-        <button type="button" className="tb-btn tb-icon tb-sidebar" data-sidebar="activity" aria-controls="feed" aria-expanded="true" aria-label={t('ui.activityPanel.title')} title={t('ui.activityPanel.title')}><span data-icon="panel"></span></button>
+        <button type="button" className="tb-btn tb-icon tb-sidebar tb-sidebar-left" data-sidebar="sessions" aria-controls="sessions-sidebar" aria-expanded="false" aria-label={t('ui.sessionRail.title')} title={t('ui.sessionRail.title')}><span data-icon="panel"></span></button>
+        <button type="button" className="tb-btn tb-icon tb-sidebar" data-sidebar="activity" aria-controls="feed" aria-expanded="false" aria-label={t('ui.activityPanel.title')} title={t('ui.activityPanel.title')}><span data-icon="panel"></span></button>
       </div>
       <div className="tb-actions">
         <div className="pop-wrap">

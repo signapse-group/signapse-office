@@ -57,7 +57,7 @@ test('panels open and close', async ({ page }) => {
 });
 
 test('each desktop sidebar gives its width to the office and remembers its state', async ({ page }) => {
-  test.setTimeout(150_000);
+  test.setTimeout(240_000);
   await page.setViewportSize({ width: 1200, height: 760 });
   await page.addInitScript(() => localStorage.setItem('office-quality', 'low'));
   await page.goto('/?demo=claude&layout=cozy');

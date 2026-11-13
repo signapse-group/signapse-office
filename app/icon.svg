@@ -1,0 +1,35 @@
+<svg viewBox="100.87776184082031 84.75552368164062 309.2444763183594 309.2444763183594" xmlns="http://www.w3.org/2000/svg" aria-label="Signapse logo preview" width="309.2444763183594" height="309.2444763183594" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <mask id="holeMask">
+              <rect width="500" height="500" fill="white"/>
+              <circle class="hole hole-1" cx="174" cy="136" r="10.05" fill="black"/>
+              <circle class="hole hole-2" cx="354" cy="226" r="10.05" fill="black"/>
+              <circle class="hole hole-3" cx="157" cy="263" r="10.05" fill="black"/>
+              <circle class="hole hole-4" cx="343" cy="344" r="10.05" fill="black"/>
+              <circle class="hole hole-5" cx="259" cy="323" r="5.05" fill="black"/>
+            </mask>
+          </defs>
+
+          <g id="exportGroup">
+            <g id="logoCore" mask="url(#holeMask)">
+              <path class="signal-arc" d="M 174 136 C 225 92, 300 94, 338 145 C 350 161, 356 186, 354 226" fill="none" stroke="#12d6b1" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="signal-line" d="M 157 247 C 157 221, 173 206, 199 206 L 238 206 L 264 154 L 290 206 L 316 206 L 342 234" fill="none" stroke="#12d6b1" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="synapse-arc" d="M 157 265 C 157 338, 208 374, 272 374 C 302 374, 326 363, 343 344" fill="none" stroke="#eafdf8" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="synapse-stem" d="M 259 323 L 259 368" fill="none" stroke="#eafdf8" stroke-width="14" stroke-linecap="round"/>
+
+              <circle class="synapse-dot" cx="228.4" cy="305.0" r="8" fill="#12d6b1"/>
+              <circle class="synapse-dot" cx="197.8" cy="287.0" r="8" fill="#12d6b1"/>
+              <circle class="synapse-dot" cx="280.9" cy="300.7" r="8" fill="#12d6b1"/>
+              <circle class="synapse-dot" cx="302.7" cy="278.4" r="8" fill="#12d6b1"/>
+              <circle class="synapse-dot" cx="324.6" cy="256.1" r="8" fill="#12d6b1"/>
+            </g>
+
+            <g id="rings">
+              <circle class="node-primary node-1" cx="174" cy="136" r="20" fill="transparent" stroke="#12d6b1" stroke-width="20"/>
+              <circle class="node-primary node-2" cx="354" cy="226" r="20" fill="transparent" stroke="#12d6b1" stroke-width="20"/>
+              <circle class="node-secondary node-3" cx="157" cy="263" r="20" fill="transparent" stroke="#eafdf8" stroke-width="20"/>
+              <circle class="node-secondary node-4" cx="343" cy="344" r="20" fill="transparent" stroke="#eafdf8" stroke-width="20"/>
+              <circle class="node-secondary node-5" cx="259" cy="323" r="12" fill="transparent" stroke="#eafdf8" stroke-width="14"/>
+            </g>
+          </g>
+        </svg>

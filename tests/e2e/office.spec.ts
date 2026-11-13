@@ -86,10 +86,11 @@ test('each desktop sidebar gives its width to the office and remembers its state
   await expect.poll(async () => (await canvas.boundingBox())!.width).toBe(1200);
 
   await page.reload();
+  await expect(canvas).toBeVisible();
   await expect(sessions).toHaveAttribute('aria-expanded', 'false');
   await expect(activity).toHaveAttribute('aria-expanded', 'false');
-  await sessions.click();
-  await activity.click();
+  await sessions.press('Enter');
+  await activity.press('Enter');
   await expect(page.locator('#sessions-sidebar')).toBeVisible();
   await expect(page.locator('#feed')).toBeVisible();
   await expect.poll(async () => (await stage.boundingBox())!.width).toBe(initialWidth);
